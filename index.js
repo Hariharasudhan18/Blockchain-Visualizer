@@ -41,15 +41,16 @@ class Blockchain {
     }
 
     addNewBlock(data) {
-        var block = new Block(this.getLastIndex() + 1, data, this.getLastHash())
-        this.blockchain.push(block)
+        var block = new Block(this.getLastIndex() + 1, data, this.getLastHash());
+        this.blockchain.push(block);
     }
     getLastIndex() {
-        return this.blockchain.at(-1).index
+        return this.blockchain[this.blockchain.length -1].index;
+        // return this.blockchain.at(-1).index;
     }
 
     getLastHash() {
-        return this.blockchain.at(-1).currHash
+        return this.blockchain[this.blockchain.length -1].currHash;
     }
 }
 
